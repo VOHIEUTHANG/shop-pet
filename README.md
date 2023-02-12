@@ -1,4 +1,4 @@
-# TOIEC TRANNING WEBAPP
+# SHOP PET WEBAPP
 
 ## Tech used
 
@@ -14,7 +14,7 @@ Back End :
 - Core: NodeJS + Express
 - Languages: Typescript
 - Database: MongoDB + Atlas Clound
-- ODM: Mongoose 
+- ODM: Mongoose
 
 ---
 
