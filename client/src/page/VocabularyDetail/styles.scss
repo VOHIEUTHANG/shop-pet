@@ -1,0 +1,21 @@
+.vocabulary-page {
+  font-size: 1.1rem;
+  p {
+    margin: 6px 0;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+  }
+  .roate-y-180 {
+    transform: rotateY(180deg);
+  }
+  .flip-wrapper:hover > div {
+    transform: rotateY(180deg);
+  }
+  .flip-wrapper > div {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}

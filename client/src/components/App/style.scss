@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "~antd/dist/antd.css";
+
+@layer base {
+  body {
+    font-family: "Rubik", sans-serif;
+  }
+}
+.page-wrapper {
+  @apply py-8;
+}
+.form-container {
+  @apply p-8 rounded-xl shadow-lg min-w-[600px];
+}
+.form-title {
+  @apply uppercase text-2xl text-center mb-6 tracking-wide;
+}
+.img-styles {
+  @apply w-full h-full object-cover select-none;
+}
+.title {
+  @apply text-center text-4xl uppercase mb-4 font-medium;
+}
+.subtitle {
+  @apply text-center text-xl  mb-4;
+}
+.page-title {
+  @apply text-center uppercase text-4xl font-semibold mb-8 text-slate-600;
+}
+.paper {
+  @apply border border-slate-200 rounded-xl p-4 bg-white;
+}
+.primaty-title {
+  @apply text-4xl font-semibold mb-8 text-primary-color-strong;
+}
+.flipCard {
+  @apply absolute inset-0 rounded-xl shadow-xl border border-gray-light justify-center items-center flex text-2xl;
+}
