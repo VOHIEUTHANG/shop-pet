@@ -1,7 +1,7 @@
 import NavTab from "../../components/NavTab";
 import logoUrl from "../../assets/images/logos/logo-full.png";
 import { Link } from "react-router-dom";
-import { Input } from "antd";
+import { Input, ConfigProvider } from "antd";
 const { Search } = Input;
 
 type PropsType = {
@@ -14,19 +14,22 @@ const Header = ({ isLogined = false }: PropsType) => {
   return (
     <header id="header" className=" bg-main shadow sticky top-0 z-50">
       <div className="container">
-        <div className="header-wrapper flex h-[100px]  items-center justify-between">
+        <div className="header-wrapper flex h-auto items-center justify-between">
           <div className="logo">
             <Link to="/">
               <img className="max-h-[70px]" src={logoUrl} alt="" />
             </Link>
           </div>
-          <div className="header-center flex flex-col justify-between gap-1">
+          <div className="pt-4 pb-2 header-center flex flex-col justify-between gap-3">
             <div className="search w-full">
-              <Search
-                placeholder="input search text"
-                onSearch={onSearch}
-                enterButton
-              />
+              <ConfigProvider>
+                <Search
+                  size="large"
+                  placeholder="Tìm kiếm ..."
+                  onSearch={onSearch}
+                  enterButton
+                />
+              </ConfigProvider>
             </div>
             <div className="nav h-full">
               <ul className="nav-list flex">
@@ -99,8 +102,42 @@ const Header = ({ isLogined = false }: PropsType) => {
                 >
                   Thú cưng khác
                 </NavTab>
-                <NavTab to="/toiec-tips">Thức ăn</NavTab>
-                <NavTab to="/vocabulary">Phụ kiện</NavTab>
+                <NavTab
+                  dropDown={[
+                    { href: "/mock-test/mini", title: "Thức ăn cho chó" },
+                    {
+                      href: "/mock-test/full",
+                      title: "Thức ăn cho mèo",
+                    },
+                    {
+                      href: "/mock-test/full",
+                      title: "Thức ăn khác",
+                    },
+                  ]}
+                  to="/toiec-tips"
+                >
+                  Thức ăn
+                </NavTab>
+                <NavTab
+                  dropDown={[
+                    { href: "/mock-test/mini", title: "Quần áo" },
+                    {
+                      href: "/mock-test/full",
+                      title: "Dây xích",
+                    },
+                    {
+                      href: "/mock-test/full",
+                      title: "Chỗ ở",
+                    },
+                    {
+                      href: "/mock-test/full",
+                      title: "Dụng cụ khác",
+                    },
+                  ]}
+                  to="/vocabulary"
+                >
+                  Phụ kiện
+                </NavTab>
               </ul>
             </div>
           </div>

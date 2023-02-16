@@ -32,7 +32,7 @@ const NavTab = ({ icon: Icon, to, children, onClick, dropDown }: PropsType) => {
             return (
               <Link
                 key={index}
-                className="tracking-wide px-8 py-3 whitespace-nowrap text-left z-10 hover:bg-amber-200 transition ease-in-out delay-200 hover:text-black hover:translate-x-3 uppercase"
+                className="rounded-lg tracking-wide px-8 py-3 whitespace-nowrap text-left z-10 hover:bg-amber-200 transition ease-in-out hover:text-gray-dark hover:translate-x-3 uppercase"
                 to={hrefObj.href}
               >
                 {hrefObj.title}

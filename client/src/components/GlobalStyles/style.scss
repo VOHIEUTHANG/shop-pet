@@ -99,3 +99,22 @@ label.false .ant-radio-checked .ant-radio-inner {
 label.true .ant-radio-checked .ant-radio-inner {
   background-color: rgb(137, 255, 58);
 }
+
+.ant-btn.ant-btn-primary {
+  border-color: #ccc;
+  background-color: $color-primary;
+  color: white;
+}
+
+.anticon.anticon-search {
+  width: max-content;
+}
+.ant-input-search .ant-input:hover,
+.ant-input-search .ant-input:focus {
+  border-color: $color-primary;
+}
+
+.ant-input:focus,
+.ant-input-focused {
+  box-shadow: 0 0 0 2px rgba(255, 246, 151, 0.6);
+}
