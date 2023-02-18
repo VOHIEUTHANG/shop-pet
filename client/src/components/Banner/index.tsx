@@ -1,5 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper";
+import banner1 from "../../assets/images/banners/panner_cat_1.jpg";
+import banner2 from "../../assets/images/banners/panner_cat_2.jpg";
+import banner3 from "../../assets/images/banners/panner_cat_3.jpg";
+import banner4 from "../../assets/images/banners/panner_dog_1.jpg";
+import banner5 from "../../assets/images/banners/panner_dog_2.jpg";
+
 // STYLES
 import "swiper/css";
 import "swiper/css/pagination";
@@ -25,38 +31,27 @@ const Banner = ({ children }: PropsType) => {
       >
         <SwiperSlide>
           <div className="border-sm max-h-[50vh] w-full flex items-center justify-center overflow-hidden brightness-75">
-            <img
-              className="img-styles"
-              src="https://images.wallpaperscraft.com/image/single/book_text_motivation_coffee_hand_119514_1920x1080.jpg"
-              alt=""
-            />
+            <img className="img-styles" src={banner3} alt="" />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="border-sm  max-h-[50vh] w-full flex items-center justify-center overflow-hidden brightness-75">
-            <img
-              className="img-styles"
-              src="https://images.wallpaperscraft.com/image/single/pillar_plate_inscription_119232_1920x1080.jpg"
-              alt=""
-            />
+          <div className="border-sm max-h-[50vh] w-full flex items-center justify-center overflow-hidden brightness-75">
+            <img className="img-styles" src={banner2} alt="" />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="border-sm  max-h-[50vh] w-full flex items-center justify-center overflow-hidden brightness-75">
-            <img
-              className="img-styles"
-              src="https://images.wallpaperscraft.com/image/single/wood_words_minimalism_style_74273_1920x1080.jpg"
-              alt=""
-            />
+          <div className="border-sm max-h-[50vh] w-full flex items-center justify-center overflow-hidden brightness-75">
+            <img className="img-styles" src={banner1} alt="" />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="border-sm  max-h-[50vh] w-full flex items-center justify-center overflow-hidden brightness-75">
-            <img
-              className="img-styles"
-              src="https://images.wallpaperscraft.com/image/single/motivation_phrase_notebook_178598_1920x1080.jpg"
-              alt=""
-            />
+          <div className="border-sm max-h-[50vh] w-full flex items-center justify-center overflow-hidden brightness-75">
+            <img className="img-styles" src={banner4} alt="" />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="border-sm max-h-[50vh] w-full flex items-center justify-center overflow-hidden brightness-75">
+            <img className="img-styles" src={banner5} alt="" />
           </div>
         </SwiperSlide>
       </Swiper>

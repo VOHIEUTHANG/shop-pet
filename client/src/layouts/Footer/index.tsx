@@ -22,16 +22,16 @@ const Footer = () => {
           <div className="col flex justify-center">
             <div className="ul flex items-center">
               <li className="p-4 uppercase text-md whitespace-nowrap">
-                <Link to="/training">Training</Link>
+                <Link to="/training">Chó cưng</Link>
               </li>
               <li className="p-4 uppercase text-md whitespace-nowrap">
-                <Link to="/mock-test">MockTest</Link>
+                <Link to="/mock-test">Mèo cưng</Link>
               </li>
               <li className="p-4 uppercase text-md whitespace-nowrap">
-                <Link to="/toiec-tips">Toiec tips</Link>
+                <Link to="/toiec-tips">Thức ăn thú cưng</Link>
               </li>
               <li className="p-4 uppercase text-md whitespace-nowrap">
-                <Link to="/Documents">Documents</Link>
+                <Link to="/Documents">Phụ kiện thú cưng</Link>
               </li>
             </div>
           </div>
