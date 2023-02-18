@@ -7,7 +7,7 @@ type PropsType = {
 const Section = ({ title, children }: PropsType) => {
   return (
     <div className="mb-10">
-      <h3 className="capitalize text-4xl font-semibold mb-8 text-primary-color-strong">
+      <h3 className="uppercase text-3xl font-bold mb-8 text-center text-text-color">
         {title}
       </h3>
       <div>{children}</div>
