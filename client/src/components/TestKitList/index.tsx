@@ -9,7 +9,7 @@ type PropsType = {
 const TestKitList = ({ testKitList }: PropsType) => {
   return (
     <div>
-      <Row gutter={[16, 16]}>
+      <Row gutter={[30, 30]}>
         {testKitList.map((test, index) => {
           return (
             <Col key={index} xs={24} sm={24} md={12} lg={12} xl={8}>

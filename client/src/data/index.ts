@@ -1,89 +1,200 @@
 import { CardListType } from "../components/CardList";
 import { TestKitListType } from "../components/TestKitList";
 import { TipsCartType } from "../components/TipsCard";
-const listeningTestList: CardListType = [
+import facebookBackground from "../assets/images/socials/facebook.jpg";
+import youtubekground from "../assets/images/socials/youtube.jpg";
+const dogList: CardListType = [
   {
-    href: "/training/listening/1",
-    part: 1,
-    title: "Photographs",
-    content:
-      "Four short statements regarding a photograph will be spoken only one time. Of these four statements, select the one. that best describes the photograph.",
+    href: "",
+    price: 1200,
+    title: "Chó Corgi",
+    content: "",
     imgUrl:
-      "https://images.unsplash.com/photo-1548502499-ef49e8cf98d4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBob3RvZ3JhcGh5fGVufDB8fDB8fA%3D%3D&w=1000&q=80",
+      "https://dogily.vn/wp-content/uploads/2022/04/corgi-vang-trang-duc-4-400x400.png",
   },
   {
-    href: "/training/listening/part-2",
-    part: 2,
-    title: "Question - Response",
-    content:
-      "Three responses to one question or statement will be spoken only one time. Select the best response for the question.",
+    href: "",
+    price: 1600,
+    title: "Chó Phốc Sóc",
+    content: "",
     imgUrl:
-      "https://arrivein.com/wp-content/uploads/2020/07/Blog-Banner-Job-interview-questions.jpg",
+      "https://dogily.vn/wp-content/uploads/2022/08/cho-phoc-soc-vang-duc-day-du-giay-vka-2-400x400.png",
   },
   {
-    href: "/training/listening/part-3",
-    part: 3,
-    title: "Short Conversations",
-    content:
-      "Conversations between two or three people will be spoken only one time. Listen to each conversation and select the best response for the question. There are three questions for each conversation.",
+    href: "",
+    price: 1300,
+    title: "Chó Poodle",
+    content: "",
     imgUrl:
-      "https://cdn.shrm.org/image/upload/c_crop%2Ch_386%2Cw_686%2Cx_0%2Cy_59/c_fit%2Cf_auto%2Cq_auto%2Cw_767/v1/Competencies/conversation_isrprn?databtoa=eyIxNng5Ijp7IngiOjAsInkiOjU5LCJ4MiI6Njg2LCJ5MiI6NDQ0LCJ3Ijo2ODYsImgiOjM4Nn19",
+      "https://dogily.vn/wp-content/uploads/2022/07/cho-poodle-teacup-mau-trang-cai-9-400x400.png",
   },
   {
-    href: "/training/listening/part-4",
-    part: 4,
-    title: "Short Talks",
-    content:
-      "Short talks such as announcements or narrations will be spoken only one time. Listen to each talk and select the best response for the question There are three questions for each talk.",
+    href: "",
+    price: 1420,
+    title: "Chó Bichon",
+    content: "",
     imgUrl:
-      "https://teded.tedcdn.com/assets/student-talks/hero-01-021ecabf5ecd8b43ca816a1297bcd3f76cbc512de1689279d5301b01222f0001.jpg",
+      "https://dogily.vn/wp-content/uploads/2022/06/cho-bichon-trang-cai-7-400x400.png",
+  },
+  {
+    href: "",
+    price: 820,
+    title: "Chó Shipa Inu",
+    content: "",
+    imgUrl:
+      "https://dogily.vn/wp-content/uploads/2021/09/dan-3-cho-shiba-inu-mai-vang-trang-2-thang-tuoi-1-400x400.jpg",
+  },
+  {
+    href: "",
+    price: 2600,
+    title: "Chó Golden",
+    content: "",
+    imgUrl:
+      "https://dogily.vn/wp-content/uploads/2022/05/cho-golden-retriever-400x400.jpg",
   },
 ];
-const readingTestList: CardListType = [
+const catList: CardListType = [
   {
-    href: "/training/reading/part-5",
-    part: 5,
-    title: "Incomplete Sentences",
-    content:
-      "Select the best answer of the four choices to complete the sentence.",
+    href: "",
+    price: 1230,
+    title: "Mèo anh lông ngắn",
+    content: "",
     imgUrl:
-      "https://www.masterclass.com/cdn-cgi/image/width=828,quality=75,format=webp/https://images.ctfassets.net/3s5io6mnxfqz/3QSruYage5D2d9ZJ4fg5Ir/b4a3bb428de80f7f404130eb67e789a7/AdobeStock_142817078.jpeg",
+      "https://dogily.vn/wp-content/uploads/2022/06/meo-anh-long-ngan-xam-xanh-truong-thanh-scaled-400x400.jpg",
   },
   {
-    href: "/training/reading/part-6",
-    part: 6,
-    title: "Text Completion",
-    content:
-      "Select the best answer of the four choices (words, phrases, or a sentence) to complete the text. There are four questions for each text.",
+    href: "",
+    price: 1420,
+    title: "Mèo anh ba tư",
+    content: "",
     imgUrl:
-      "https://document360.com/wp-content/uploads/2019/08/blogimage11-e1564751826368.jpg",
+      "https://dogily.vn/wp-content/uploads/2019/12/meo-ba-tu-duc-dogily-3-thang-3-400x400.jpg",
   },
   {
-    href: "/training/reading/part-7",
-    part: 7,
-    title: "Reading Comprehension",
-    content:
-      "Four short statements regarding a photograph will be spoken only one time. Of these four statements, select the one. that best describes the photograph.",
+    href: "",
+    price: 530,
+    title: "Mèo anh lông dài",
+    content: "",
     imgUrl:
-      "https://blaze.today/images/posts/please-kindly-sign-and-return.jpeg",
+      "https://dogily.vn/wp-content/uploads/2020/03/meo-anh-long-dai-de-thuong-400x400.jpg",
+  },
+  {
+    href: "",
+    price: 630,
+    title: "Munchkin chân ngắn",
+    content: "",
+    imgUrl:
+      "https://dogily.vn/wp-content/uploads/2021/09/meo-munchkin-bicolor-4-thang-10-1-400x400.jpg",
+  },
+  {
+    href: "",
+    price: 630,
+    title: "Mèo Scottish tai cụp",
+    content: "",
+    imgUrl:
+      "https://dogily.vn/wp-content/uploads/2022/07/meo-ald-trang-tai-cup-cai-8-400x400.png",
+  },
+  {
+    href: "",
+    price: 2430,
+    title: "Mèo bengal",
+    content: "",
+    imgUrl:
+      "https://dogily.vn/wp-content/uploads/2022/05/meo-bengal-duc-1-400x400.png",
+  },
+  {
+    href: "",
+    price: 1130,
+    title: "Mèo không lông sphynx",
+    content: "",
+    imgUrl:
+      "https://dogily.vn/wp-content/uploads/2021/09/Meo-Sphynx-dogily-petshop-2-400x400.jpg",
   },
 ];
-const testKitList: TestKitListType = [
+
+const petFoodList: CardListType = [
   {
-    href: "/mock-test/mini",
-    name: "mini",
-    descriptions:
-      "Take mini test with the number of questions and time limit reduced by half",
-    backgroundImgUrl:
-      "https://toeic-testpro.com/_next/image/?url=%2Fimages%2Fapp%2Ftoeic%2Fmini-test.png&w=1920&q=75",
+    href: "",
+    price: 298,
+    title: "Thức ăn chó Equilibrio",
+    content:
+      "Thức ăn cho chó trưởng thành mọi giống Equilibrio All Breed Adult – 2kg",
+    imgUrl:
+      "https://dogily.vn/wp-content/uploads/2021/12/hat-equilibrio-cho-cho-truong-thanh-4-400x400.jpg",
   },
   {
-    href: "/mock-test/full",
-    name: "full",
-    descriptions:
-      "Take full test with the same number of questions and time limit as the actual test",
-    backgroundImgUrl:
-      "https://toeic-testpro.com/_next/image/?url=%2Fimages%2Fapp%2Ftoeic%2Ffull-test.png&w=1920&q=75",
+    href: "",
+    price: 280,
+    title: "Hạt Dog Mania",
+    content: "Hạt Dog Mania Cho Chó Trưởng Thành 3kg",
+    imgUrl:
+      "https://dogily.vn/wp-content/uploads/2021/12/dog-mania-cho-cho-truong-thanh-3-kg-1-400x400.jpg",
+  },
+  {
+    href: "",
+    price: 420,
+    title: "Hạt Smartheart Adult Roast",
+    content:
+      "Hạt Smartheart Adult Roast Beef Flavor hương thịt bò nướng – 400g (lấy từ bao 20kg)",
+    imgUrl:
+      "https://dogily.vn/wp-content/uploads/2021/12/hat-smart-heart-vi-thit-bo-nuong-400g-6-400x400.jpg",
+  },
+];
+
+const petAccessoryList: CardListType = [
+  {
+    href: "",
+    price: 199,
+    title: "Bát ăn Oasispet",
+    content: "Bát ăn đôi Oasispet cho chó mèo size M",
+    imgUrl: "https://dogily.vn/wp-content/uploads/2021/12/1-400x400.png",
+  },
+  {
+    href: "",
+    price: 280,
+    title: "Bộ ăn uống tự động cho chó mèo ",
+    content: "",
+    imgUrl:
+      "https://dogily.vn/wp-content/uploads/2020/02/binh_uong_co_dong_2_trong_1-400x400.jpg",
+  },
+  {
+    href: "",
+    price: 420,
+    title: "Petstar – Vòng cổ in hình 1cm",
+    content: "",
+    imgUrl:
+      "https://dogily.vn/wp-content/uploads/2020/02/petstar-vong-co-in-hinh-1cm-400x400.jpg",
+  },
+  {
+    href: "",
+    price: 2750,
+    title: "Nhà cây cho mèo Cat Tree DS706",
+    content: "",
+    imgUrl:
+      "https://dogily.vn/wp-content/uploads/2020/02/nha-cay-cho-meo-cat-tree-ds706-400x400.jpg",
+  },
+  {
+    href: "",
+    price: 120,
+    title: "Túi đeo chéo cho chó mèo ",
+    content: "",
+    imgUrl:
+      "https://dogily.vn/wp-content/uploads/2020/02/tui-deo-cheo-1-400x400.jpg",
+  },
+];
+
+const joinGroupList: TestKitListType = [
+  {
+    href: "",
+    name: "facebok",
+    descriptions: "Tham gia nhóm trên facebook",
+    backgroundImgUrl: facebookBackground,
+  },
+  {
+    href: "",
+    name: "Youtube",
+    descriptions: "Theo dõi chúng tôi trên youtube",
+    backgroundImgUrl: youtubekground,
   },
 ];
 
@@ -605,9 +716,11 @@ const vocabularyPart3: {
   },
 ];
 export {
-  listeningTestList,
-  readingTestList,
-  testKitList,
+  dogList,
+  catList,
+  petFoodList,
+  petAccessoryList,
+  joinGroupList,
   tipsCardList,
   vocabularyCardList,
   vocabularyPart1People,
