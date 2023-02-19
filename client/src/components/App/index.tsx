@@ -4,6 +4,7 @@ import { publicRoutes } from "../../routes";
 import mainLayout from "../../layouts/MainLayout";
 import GoToTop from "../GoToTop";
 import "./style.scss";
+import "react-toastify/dist/ReactToastify.minimal.css";
 
 function App() {
   const [showGoToTop, setShowGoToTop] = useState(false);
