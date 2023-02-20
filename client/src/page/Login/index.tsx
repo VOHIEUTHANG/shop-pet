@@ -1,21 +1,27 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Form, Input } from "antd";
 import Button from "../../components/Button";
 import GoogleLogin from "react-google-login";
 import FacebookLogin from "react-facebook-login";
 import { gapi } from "gapi-script";
 import { useEffect } from "react";
-import { login } from "../../apis/user";
+import { login, authApiSlice } from "../../apis/user";
 import { ToastContainer, toast } from 'react-toastify';
 import { injectStyle } from "react-toastify/dist/inject-style";
 
 const Login = () => {
   const onFinish = async ({ password, username }: { username: string; password: string; }) => {
     console.log("Success:");
-    await handleLogIn({
-      username,
-      password,
-      typeLogin: "DEFAULT",
-    })
+    // await handleLogIn({
+    //   username,
+    //   password,
+    //   typeLogin: "DEFAULT",
+    // })
+    console.log({ authApiSlice });
+    // const [login, { isLoading }] = useLoginMutation();
+    // const dispatch = useDispatch();
+    // const userData = await login({ username, password, typeLogin: "DEFAULT" }).unwrap();
+    // dispatch(setCredentials({ user: userData, accessToken: userData?.accessToken }));
   };
 
   const onFinishFailed = (errorInfo: any) => {
