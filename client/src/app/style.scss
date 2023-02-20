@@ -39,3 +39,15 @@
 .flipCard {
   @apply absolute inset-0 rounded-xl shadow-xl border border-gray-light justify-center items-center flex text-2xl;
 }
+
+.btn-facebook {
+  width: 165px;
+  height:35px;  
+  border-radius: 4px;
+  background: #3b5998;
+  color:white;
+  border:0px transparent;  
+  text-align: center;
+  margin:5px;
+  display: inline-block;
+}
