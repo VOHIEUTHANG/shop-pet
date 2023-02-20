@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    font-family: "Rubik", sans-serif;
+    font-family: "Quicksand", sans-serif;
   }
 }
 .page-wrapper {
@@ -22,7 +22,7 @@
   @apply w-full h-full object-cover select-none;
 }
 .title {
-  @apply text-center text-4xl uppercase mb-4 font-medium;
+  @apply text-center text-4xl uppercase mb-4;
 }
 .subtitle {
   @apply text-center text-xl  mb-4;

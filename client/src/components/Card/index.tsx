@@ -1,15 +1,16 @@
 import { Card as CardAntd } from "antd";
 import { Link } from "react-router-dom";
+import { formatCurrency } from "../../utils/common";
 
 export type PropsTypes = {
   href: string;
   imgUrl: string;
-  part: number;
+  price?: number;
   title: string;
-  content: string;
+  content?: string;
 };
 
-const Card = ({ href, imgUrl, part, title, content }: PropsTypes) => {
+const Card = ({ href, imgUrl, price, title, content }: PropsTypes) => {
   return (
     <Link to={href} className="h-full">
       <CardAntd
@@ -18,7 +19,7 @@ const Card = ({ href, imgUrl, part, title, content }: PropsTypes) => {
         cover={
           <div className="overflow-hidden group">
             <img
-              className="object-cover w-full h-[190px] transition-all ease-in-out duration-500 group-hover:scale-125"
+              className="object-cover w-full h-[260px] transition-all ease-in-out duration-500 group-hover:scale-125"
               alt="Photographs"
               src={
                 imgUrl ??
@@ -29,11 +30,15 @@ const Card = ({ href, imgUrl, part, title, content }: PropsTypes) => {
         }
       >
         <div className="">
-          <h3 className="mb-1 font-semibold text-lg">Part {part}</h3>
-          <p className="mb-2 font-semibold text-xl line-clamp-1">{title}</p>
-          <p className="text-txt-light font-light mt-1 text-base line-clamp-5">
+          <p className="mb-1 font-semibold text-xl line-clamp-1">{title}</p>
+          <p className="text-txt-light mt-1 text-base line-clamp-5">
             {content}
           </p>
+          {price && (
+            <h3 className="mb-1 text-lg font-semibold text-primary-color-strong">
+              Giá {formatCurrency(price)}
+            </h3>
+          )}
         </div>
       </CardAntd>
     </Link>

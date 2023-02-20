@@ -148,14 +148,14 @@ const Header = ({ isLogined = false }: PropsType) => {
             ) : (
               <div>
                 <Link
-                  className="hover:underline uppercase hover:text-primary-color"
+                  className="hover:underline font-semibold uppercase hover:text-primary-color"
                   to="/user/login"
                 >
                   Đăng nhập
                 </Link>
                 <span> / </span>
                 <Link
-                  className="hover:underline uppercase hover:text-primary-color"
+                  className="hover:underline font-semibold uppercase hover:text-primary-color"
                   to="/user/register"
                 >
                   Đăng ký

@@ -21,7 +21,7 @@ const NavTab = ({ icon: Icon, to, children, onClick, dropDown }: PropsType) => {
         }}
         className="px-4 h-full py-2 flex items-center transition border-b-2 border-transparent group-hover:border-primary-color group-hover:text-primary-color"
       >
-        <span className="uppercase text-md tracking-wide whitespace-nowrap">
+        <span className="uppercase font-semibold text-md tracking-wide whitespace-nowrap">
           {children}
         </span>
         {Icon && <Icon size="1.3rem" />}

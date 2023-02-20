@@ -20,9 +20,10 @@ module.exports = {
         "3xl": "0 4px 20px 2px rgba(0, 0, 0, 0.05)",
       },
       colors: {
+        "text-color": "#0a0a0a",
         "primary-color": "#fcb000",
         "secondary-color": "#74d14c",
-        "primary-color-strong": "#42979d",
+        "primary-color-strong": "#f38a00",
         transparent: "transparent",
         "txt-light": "#505050",
         main: "#fff",
