@@ -9,5 +9,6 @@
 /client/build
 
 /client/package-lock.json
+/client/yarn.lock
 
 
