@@ -1,14 +1,75 @@
+import React from "react";
 import NavTab from "../../components/NavTab";
 import logoUrl from "../../assets/images/logos/logo-full.png";
 import { Link } from "react-router-dom";
 import { Input, ConfigProvider } from "antd";
 import Avatar from "../../components/Avatar";
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../../auth/authSlice";
+import { Space, Badge, Dropdown, Divider } from "antd";
+import { ShoppingCartOutlined } from "@ant-design/icons";
+import Button from "../../components/Button";
+import { Image } from "antd";
+
 const { Search } = Input;
 
 const onSearch = (value: string) => console.log(value);
 
 const Header = () => {
-  const isLogin = true;
+  const currentUser = useSelector(selectCurrentUser);
+  const cartItems = [
+    {
+      key: 1,
+      label: (
+        <div className="p-1 flex justify-between items-center gap-10">
+          <Image
+            preview={false}
+            style={{ borderRadius: 10 }}
+            width={50}
+            src="https://www.cleanipedia.com/images/5iwkm8ckyw6v/5x6NTLa0UfN3dKE6zio8pl/609b46ba90fa804a124d151c90311d16/cGV4ZWxzLWNoZXZhbm9uLXBob3RvZ3JhcGh5LTExMDgwOTlfXzFfLmpwZw/990w-660h/c%C3%A1ch-nu%C3%B4i-ch%C3%B3.jpg"
+          />
+          <Space direction="vertical" size={2}>
+            <p style={{ textAlign: "right" }}>Chó Phú Quốc</p>
+            <p>1.220.000 VND x 1</p>
+          </Space>
+        </div>
+      ),
+    },
+    {
+      key: 2,
+      label: (
+        <div className="p-1 flex justify-between items-center gap-10">
+          <Image
+            preview={false}
+            style={{ borderRadius: 10 }}
+            width={50}
+            src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2021/11/20/975861/5-Giong-Cho-Long-Xu-.jpg"
+          />
+          <Space direction="vertical" size={2}>
+            <p style={{ textAlign: "right" }}>Mèo múp</p>
+            <p>200.000 VND x 3</p>
+          </Space>
+        </div>
+      ),
+    },
+    {
+      key: 3,
+      label: (
+        <div className="p-1 flex justify-between items-center gap-10">
+          <Image
+            preview={false}
+            style={{ borderRadius: 10 }}
+            width={50}
+            src="https://lh4.googleusercontent.com/sd8RP2IdpQC_39IJ9DEPq_LUQkp97u2Pki38oxGLbI8SDAYy3Tx8O1Gomhqm2ErhtxemRyFifDIZqORfSI0b_O4Yn-2tf8sCCwnUZzgHOrwqCFLhCQtjaTFhKcIyWheOZcMBq9_1"
+          />
+          <Space direction="vertical" size={2}>
+            <p style={{ textAlign: "right" }}>Vẹt ấn độ</p>
+            <p>120.000 VND x 2</p>
+          </Space>
+        </div>
+      ),
+    },
+  ];
   return (
     <header id="header" className=" bg-main shadow sticky top-0 z-50">
       <div className="container">
@@ -141,8 +202,36 @@ const Header = () => {
           </div>
 
           <div className="user">
-            {isLogin ? (
-              <Avatar/>
+            {currentUser ? (
+              <Space size="large">
+                <Avatar />
+                <Dropdown
+                  placement="bottomRight"
+                  overlayStyle={{ minWidth: 200 }}
+                  menu={{ items: cartItems }}
+                  dropdownRender={(menu) => (
+                    <div>
+                      {React.cloneElement(menu as React.ReactElement)}
+                      <Divider style={{ margin: 0 }} />
+                      <div className="flex p-3 items-end flex-col gap-2">
+                        <div>
+                          <span className="text-right mr-2">Tổng</span>
+                          <span className="text-base text-primary-color">
+                            1.400.000 VND
+                          </span>
+                        </div>
+                        <Button rounded={4} size="md" type="outline">
+                          Mua hàng
+                        </Button>
+                      </div>
+                    </div>
+                  )}
+                >
+                  <Badge count={5}>
+                    <ShoppingCartOutlined style={{ fontSize: 28 }} />
+                  </Badge>
+                </Dropdown>
+              </Space>
             ) : (
               <div>
                 <Link
