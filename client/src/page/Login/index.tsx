@@ -8,20 +8,26 @@ import { useEffect } from "react";
 import { login, authApiSlice } from "../../apis/user";
 import { ToastContainer, toast } from 'react-toastify';
 import { injectStyle } from "react-toastify/dist/inject-style";
+import { useDispatch, useSelector } from "react-redux";
+import { setCredentials, selectCurrentUser, selectCurrentToken } from "../../auth/authSlice";
 
-const Login = () => {
+const Login = function () {
+  const { useLoginMutation } = authApiSlice;
+  const [login, { isLoading }] = useLoginMutation();
+  const dispatch = useDispatch();
+  const user = useSelector(selectCurrentUser);
+  const accessToken = useSelector(selectCurrentToken);
+
+  console.log({ user, accessToken });
   const onFinish = async ({ password, username }: { username: string; password: string; }) => {
-    console.log("Success:");
     // await handleLogIn({
     //   username,
     //   password,
     //   typeLogin: "DEFAULT",
     // })
-    console.log({ authApiSlice });
-    // const [login, { isLoading }] = useLoginMutation();
-    // const dispatch = useDispatch();
-    // const userData = await login({ username, password, typeLogin: "DEFAULT" }).unwrap();
-    // dispatch(setCredentials({ user: userData, accessToken: userData?.accessToken }));
+    const response = await login({ username, password, typeLogin: "DEFAULT" }).unwrap();
+    if (response.data)
+    dispatch(setCredentials({ user: response?.data, accessToken: response?.data?.accessToken }));
   };
 
   const onFinishFailed = (errorInfo: any) => {

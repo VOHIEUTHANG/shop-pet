@@ -4,10 +4,11 @@ import {
     fetchBaseQuery,
     BaseQueryApi,
     FetchArgs,
-} from "@reduxjs/toolkit/query";
+} from "@reduxjs/toolkit/query/react";
 import { setCredentials, logOut } from "../auth/authSlice";
 
-export const BASE_URL = "https://nestjs-api.up.railway.app/";
+// export const BASE_URL = "https://nestjs-api.up.railway.app/";
+export const BASE_URL = "http://localhost:3900/";
 
 export const HTTP_STATUS_CODES = {
     SUCCESS: 200,
@@ -48,7 +49,6 @@ export const baseApi = async ({
 
 export const baseQuery = fetchBaseQuery({
     baseUrl: BASE_URL,
-    credentials: "include",
     prepareHeaders: (headers: Headers, { getState }) => {
         const getCustomState = getState as any;
         const token = getCustomState()?.auth?.token;
