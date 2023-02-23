@@ -2,15 +2,13 @@ import NavTab from "../../components/NavTab";
 import logoUrl from "../../assets/images/logos/logo-full.png";
 import { Link } from "react-router-dom";
 import { Input, ConfigProvider } from "antd";
+import Avatar from "../../components/Avatar";
 const { Search } = Input;
-
-type PropsType = {
-  isLogined?: boolean;
-};
 
 const onSearch = (value: string) => console.log(value);
 
-const Header = ({ isLogined = false }: PropsType) => {
+const Header = () => {
+  const isLogin = true;
   return (
     <header id="header" className=" bg-main shadow sticky top-0 z-50">
       <div className="container">
@@ -143,8 +141,8 @@ const Header = ({ isLogined = false }: PropsType) => {
           </div>
 
           <div className="user">
-            {isLogined ? (
-              <div>Login</div>
+            {isLogin ? (
+              <Avatar/>
             ) : (
               <div>
                 <Link
