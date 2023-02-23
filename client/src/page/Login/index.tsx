@@ -6,18 +6,24 @@ import FacebookLogin from "react-facebook-login";
 import { gapi } from "gapi-script";
 import { useEffect } from "react";
 import { login, authApiSlice } from "../../apis/user";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 import { injectStyle } from "react-toastify/dist/inject-style";
 
 const Login = () => {
-  const onFinish = async ({ password, username }: { username: string; password: string; }) => {
+  const onFinish = async ({
+    password,
+    username,
+  }: {
+    username: string;
+    password: string;
+  }) => {
     console.log("Success:");
     // await handleLogIn({
     //   username,
     //   password,
     //   typeLogin: "DEFAULT",
     // })
-    console.log({ authApiSlice });
+    // console.log({ authApiSlice });
     // const [login, { isLoading }] = useLoginMutation();
     // const dispatch = useDispatch();
     // const userData = await login({ username, password, typeLogin: "DEFAULT" }).unwrap();
@@ -28,12 +34,14 @@ const Login = () => {
     console.log("Failed:", errorInfo);
   };
 
-  const clientId = "467108775021-7g8htlvsvjt639qi5o2s3icarar0n8j6.apps.googleusercontent.com";
+  const clientId =
+    "467108775021-7g8htlvsvjt639qi5o2s3icarar0n8j6.apps.googleusercontent.com";
+
   useEffect(() => {
     gapi.load("client:auth2", () => {
       gapi.auth2.init({ clientId });
     });
-  });
+  }, []);
 
   if (typeof window !== "undefined") {
     injectStyle();
@@ -42,39 +50,62 @@ const Login = () => {
   const handleResponseGoogle = async (responseGG: any) => {
     const { profileObj } = responseGG || {};
     await handleLogIn({
-        email: profileObj?.email, 
-        fullName: profileObj?.name, 
-        typeLogin: "GOOGLE",
-        username: profileObj.email
-    })
-  }
+      email: profileObj?.email,
+      fullName: profileObj?.name,
+      typeLogin: "GOOGLE",
+      username: profileObj.email,
+    });
+  };
 
   const handleResponseFacebook = async (responseFB: any) => {
-    await handleLogIn({ 
+    await handleLogIn({
       email: responseFB?.email,
       fullName: responseFB?.name,
       typeLogin: "FACEBOOK",
-      username: responseFB?.email, 
-    })
-  }
+      username: responseFB?.email,
+    });
+  };
 
-  const handleLogIn = async ({ email, fullName, typeLogin, username, password }: 
-    { email?: string; fullName?: string; typeLogin: string; username?: string, password?: string }) => {
-      const toastId = toast.loading("Process is pending...");
-      try {
-        const response = await login({
-          email,
-          fullName,
-          typeLogin,
-          username,
-          password,
-        });
-        toast.update(toastId, { type: toast.TYPE.SUCCESS, render: "Login Success", isLoading: false, autoClose: 3000, closeButton: true });
-        return response;
-      } catch (error: any) {
-        toast.update(toastId, { type: toast.TYPE.ERROR, render: error.message, isLoading: false, autoClose: 3000, closeButton: true });
+  const handleLogIn = async ({
+    email,
+    fullName,
+    typeLogin,
+    username,
+    password,
+  }: {
+    email?: string;
+    fullName?: string;
+    typeLogin: string;
+    username?: string;
+    password?: string;
+  }) => {
+    const toastId = toast.loading("Process is pending...");
+    try {
+      const response = await login({
+        email,
+        fullName,
+        typeLogin,
+        username,
+        password,
+      });
+      toast.update(toastId, {
+        type: toast.TYPE.SUCCESS,
+        render: "Login Success",
+        isLoading: false,
+        autoClose: 3000,
+        closeButton: true,
+      });
+      return response;
+    } catch (error: any) {
+      toast.update(toastId, {
+        type: toast.TYPE.ERROR,
+        render: error.message,
+        isLoading: false,
+        autoClose: 3000,
+        closeButton: true,
+      });
     }
-  }
+  };
 
   return (
     <div className="container">
@@ -123,22 +154,25 @@ const Login = () => {
 
             <Form.Item wrapperCol={{ offset: 3 }}>
               <div className="flex justify-evenly">
-                  <GoogleLogin
-                    clientId="467108775021-7g8htlvsvjt639qi5o2s3icarar0n8j6.apps.googleusercontent.com"
-                    buttonText="Sign in with Google"
-                    onSuccess={handleResponseGoogle}
-                    onFailure={handleResponseGoogle}
-                    cookiePolicy={'single_host_origin'}
-                  />,
-                  <FacebookLogin
-                    appId="1162521731085220"
-                    autoLoad={false}
-                    fields="name,email,picture"
-                    callback={handleResponseFacebook}
-                    onFailure={handleResponseFacebook}
-                    cssClass="btn-facebook"
-                    textButton="Sign in with Facebook"
-                    />,
+                <GoogleLogin
+                  disabled={false}
+                  clientId="467108775021-7g8htlvsvjt639qi5o2s3icarar0n8j6.apps.googleusercontent.com"
+                  buttonText="Sign in with Google"
+                  onSuccess={handleResponseGoogle}
+                  onFailure={handleResponseGoogle}
+                  cookiePolicy={"single_host_origin"}
+                />
+                ,
+                <FacebookLogin
+                  appId="1162521731085220"
+                  autoLoad={false}
+                  fields="name,email,picture"
+                  callback={handleResponseFacebook}
+                  onFailure={handleResponseFacebook}
+                  cssClass="btn-facebook"
+                  textButton="Sign in with Facebook"
+                />
+                ,
               </div>
             </Form.Item>
 
@@ -157,7 +191,6 @@ const Login = () => {
               </Button>
             </Form.Item>
           </Form>
-          
         </div>
       </div>
     </div>
