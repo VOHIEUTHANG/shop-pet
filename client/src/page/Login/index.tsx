@@ -1,33 +1,27 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import { Form, Input } from "antd";
 import Button from "../../components/Button";
 import GoogleLogin from "react-google-login";
 import FacebookLogin from "react-facebook-login";
 import { gapi } from "gapi-script";
 import { useEffect } from "react";
-import { login, authApiSlice } from "../../apis/user";
+import { useLoginMutation } from "../../apis/user";
 import { ToastContainer, toast } from 'react-toastify';
 import { injectStyle } from "react-toastify/dist/inject-style";
-import { useDispatch, useSelector } from "react-redux";
-import { setCredentials, selectCurrentUser, selectCurrentToken } from "../../auth/authSlice";
+import {  useSelector } from "react-redux";
+import {  selectCurrentUser, selectCurrentToken } from "../../auth/authSlice";
 
 const Login = function () {
-  const { useLoginMutation } = authApiSlice;
-  const [login, { isLoading }] = useLoginMutation();
-  const dispatch = useDispatch();
+  const [login] = useLoginMutation();
   const user = useSelector(selectCurrentUser);
   const accessToken = useSelector(selectCurrentToken);
 
   console.log({ user, accessToken });
   const onFinish = async ({ password, username }: { username: string; password: string; }) => {
-    // await handleLogIn({
-    //   username,
-    //   password,
-    //   typeLogin: "DEFAULT",
-    // })
-    const response = await login({ username, password, typeLogin: "DEFAULT" }).unwrap();
-    if (response.data)
-    dispatch(setCredentials({ user: response?.data, accessToken: response?.data?.accessToken }));
+      await handleLogIn({
+        username,
+        password,
+        typeLogin: "DEFAULT",
+      });
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -68,13 +62,7 @@ const Login = function () {
     { email?: string; fullName?: string; typeLogin: string; username?: string, password?: string }) => {
       const toastId = toast.loading("Process is pending...");
       try {
-        const response = await login({
-          email,
-          fullName,
-          typeLogin,
-          username,
-          password,
-        });
+        const response = await login({ username, password, typeLogin, fullName, email }).unwrap();
         toast.update(toastId, { type: toast.TYPE.SUCCESS, render: "Login Success", isLoading: false, autoClose: 3000, closeButton: true });
         return response;
       } catch (error: any) {
@@ -130,7 +118,7 @@ const Login = function () {
             <Form.Item wrapperCol={{ offset: 3 }}>
               <div className="flex justify-evenly">
                   <GoogleLogin
-                    clientId="467108775021-7g8htlvsvjt639qi5o2s3icarar0n8j6.apps.googleusercontent.com"
+                    clientId={clientId}
                     buttonText="Sign in with Google"
                     onSuccess={handleResponseGoogle}
                     onFailure={handleResponseGoogle}
