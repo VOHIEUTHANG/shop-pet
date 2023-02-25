@@ -118,3 +118,15 @@ label.true .ant-radio-checked .ant-radio-inner {
 .ant-input-focused {
   box-shadow: 0 0 0 2px rgba(255, 246, 151, 0.6);
 }
+
+.ant-dropdown {
+  min-width: 200px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: rgba(149, 157, 165, 0.3) 8px 8px 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .ant-dropdown-menu {
+    box-shadow: none;
+  }
+}
