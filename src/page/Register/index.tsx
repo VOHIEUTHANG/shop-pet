@@ -19,6 +19,7 @@ const Register = () => {
       typeLogin: "DEFAULT",
       username,
       password,
+      imgUrl: "",
     })
   };
 
@@ -43,21 +44,24 @@ const Register = () => {
         email: profileObj?.email, 
         fullName: profileObj?.name, 
         typeLogin: "GOOGLE",
-        username: profileObj.email
+        username: profileObj.email,
+        imgUrl: profileObj?.imageUrl || "",
     })
   }
 
   const handleResponseFacebook = async (responseFB: any) => {
+    const { data } = responseFB?.picture;
     await registerUser({ 
       email: responseFB?.email,
       fullName: responseFB?.name,
       typeLogin: "FACEBOOK",
       username: responseFB?.email, 
+      imgUrl: data?.url || "",
     })
   }
 
-  const registerUser = async ({ email, fullName, typeLogin, username, password }: 
-    { email: string; fullName: string; typeLogin: string; username: string, password?: string }) => {
+  const registerUser = async ({ email, fullName, typeLogin, username, password, imgUrl }: 
+    { email: string; fullName: string; typeLogin: string; username: string; password?: string; imgUrl: string }) => {
       const toastId = toast.loading("Process is pending...");
       try {
         const response = await register({
@@ -66,6 +70,7 @@ const Register = () => {
           typeLogin,
           username,
           password,
+          imgUrl,
         }).unwrap();
         toast.update(toastId, { type: toast.TYPE.SUCCESS, render: "Register Success", isLoading: false, autoClose: 3000, closeButton: true });
         return response;

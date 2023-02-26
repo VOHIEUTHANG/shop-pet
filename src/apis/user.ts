@@ -11,6 +11,7 @@ export type IUser = {
     typeLogin?: string;
     fullName?: string;
     accessToken?: string;
+    imgUrl?: string;
 };
 
 export const authApiSlice = apiSlice.injectEndpoints({

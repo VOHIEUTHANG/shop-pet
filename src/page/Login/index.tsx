@@ -21,6 +21,7 @@ const Login = function () {
         username,
         password,
         typeLogin: "DEFAULT",
+        imgUrl: "",
       });
   };
 
@@ -45,24 +46,27 @@ const Login = function () {
         email: profileObj?.email, 
         fullName: profileObj?.name, 
         typeLogin: "GOOGLE",
-        username: profileObj.email
+        username: profileObj.email,
+        imgUrl: profileObj?.imageUrl || "",
     })
   }
 
   const handleResponseFacebook = async (responseFB: any) => {
+    const { data } = responseFB?.picture;
     await handleLogIn({ 
       email: responseFB?.email,
       fullName: responseFB?.name,
       typeLogin: "FACEBOOK",
       username: responseFB?.email, 
+      imgUrl: data?.url || "",
     })
   }
 
-  const handleLogIn = async ({ email, fullName, typeLogin, username, password }: 
-    { email?: string; fullName?: string; typeLogin: string; username?: string, password?: string }) => {
+  const handleLogIn = async ({ email, fullName, typeLogin, username, password, imgUrl }: 
+    { email?: string; fullName?: string; typeLogin: string; username?: string, password?: string, imgUrl: string }) => {
       const toastId = toast.loading("Process is pending...");
       try {
-        const response = await login({ username, password, typeLogin, fullName, email }).unwrap();
+        const response = await login({ username, password, typeLogin, fullName, email, imgUrl }).unwrap();
         toast.update(toastId, { type: toast.TYPE.SUCCESS, render: "Login Success", isLoading: false, autoClose: 3000, closeButton: true });
         return response;
       } catch (error: any) {
