@@ -205,7 +205,7 @@ const Header = () => {
           <div className="user">
             {!isEmpty(currentUser) ? (
               <Space size="large">
-                <Avatar name={currentUser.fullName}/>
+                <Avatar name={currentUser.fullName} avatar={currentUser.imgUrl}/>
                 <Dropdown
                   placement="bottomRight"
                   overlayStyle={{ minWidth: 200 }}
