@@ -9,6 +9,7 @@ import { selectCurrentUser } from "../../auth/authSlice";
 import { Space, Badge, Dropdown, Divider } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import Button from "../../components/Button";
+import { isEmpty } from 'lodash'; 
 import { Image } from "antd";
 
 const { Search } = Input;
@@ -202,9 +203,9 @@ const Header = () => {
           </div>
 
           <div className="user">
-            {currentUser ? (
+            {!isEmpty(currentUser) ? (
               <Space size="large">
-                <Avatar />
+                <Avatar name={currentUser.fullName}/>
                 <Dropdown
                   placement="bottomRight"
                   overlayStyle={{ minWidth: 200 }}
