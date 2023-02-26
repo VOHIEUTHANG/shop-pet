@@ -4,12 +4,13 @@ import GoogleLogin from "react-google-login";
 import FacebookLogin from "react-facebook-login";
 import { useEffect } from "react";
 import { gapi } from "gapi-script";
-import { register } from "../../apis/user";
+import { useRegisMutation } from "../../apis/user";
 import { ToastContainer, toast } from 'react-toastify';
 import { injectStyle } from "react-toastify/dist/inject-style";
 
 
 const Register = () => {
+  const [register, {  } ] = useRegisMutation();
   const onFinish = async ({ email, name, password, username }: { email: string, name: string, password: string, username: string }) => {
     console.log("Success:");
     await registerUser({
@@ -65,7 +66,7 @@ const Register = () => {
           typeLogin,
           username,
           password,
-        });
+        }).unwrap();
         toast.update(toastId, { type: toast.TYPE.SUCCESS, render: "Register Success", isLoading: false, autoClose: 3000, closeButton: true });
         return response;
       } catch (error: any) {

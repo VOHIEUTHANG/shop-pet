@@ -75,7 +75,8 @@ export const baseQueryReAuth = async (
         if (refreshResult?.data) {
             const getCustomState = api.getState as any;
             const user = getCustomState()?.auth?.user;
-            api.dispatch(setCredentials({ ...refreshResult?.data, user }));
+            const { accessToken } = refreshResult?.data as any;
+            api.dispatch(setCredentials({ user, accessToken }));
             result = await baseQuery(args, api, extraOptions);
         } else {
             api.dispatch(logOut());
