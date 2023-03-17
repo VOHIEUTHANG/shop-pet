@@ -10,6 +10,7 @@ import TrainingReadingDetail from "../page/Training/Reading";
 import TrainingPractive from "../page/Training/Practice";
 import ToiecTipsPageDetail from "../page/ToiecTipsDetail";
 import VocabularyDetail from "../page/VocabularyDetail";
+import AnimalDetail from "../page/AnimalDetail";
 
 type RouteType = {
     path: string;
@@ -30,6 +31,7 @@ const publicRoutes: RouteType[] = [
     { path: "/user/register", element: RegisterPage },
     { path: "/training/listening/:partKey", element: TrainingListeningDetail },
     { path: "/training/reading/:partKey", element: TrainingReadingDetail },
+    { path: "animal-detail/:animalId", element: AnimalDetail },
     {
         path: "/training/practice/:partKey/:packageNumber",
         element: TrainingPractive,
