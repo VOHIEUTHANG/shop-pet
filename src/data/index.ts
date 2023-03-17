@@ -4,53 +4,65 @@ import { TipsCartType } from "../components/TipsCard";
 import facebookBackground from "../assets/images/socials/facebook.jpg";
 import youtubekground from "../assets/images/socials/youtube.jpg";
 const dogList: CardListType = [
+  // {
+  //   href: "",
+  //   price: 1200,
+  //   title: "Chó Corgi",
+  //   content: "",
+  //   imgUrl:
+  //     "https://dogily.vn/wp-content/uploads/2022/04/corgi-vang-trang-duc-4-400x400.png",
+  // },
+  // {
+  //   href: "",
+  //   price: 1600,
+  //   title: "Chó Phốc Sóc",
+  //   content: "",
+  //   imgUrl:
+  //     "https://dogily.vn/wp-content/uploads/2022/08/cho-phoc-soc-vang-duc-day-du-giay-vka-2-400x400.png",
+  // },
+  // {
+  //   href: "",
+  //   price: 1300,
+  //   title: "Chó Poodle",
+  //   content: "",
+  //   imgUrl:
+  //     "https://dogily.vn/wp-content/uploads/2022/07/cho-poodle-teacup-mau-trang-cai-9-400x400.png",
+  // },
+  // {
+  //   href: "",
+  //   price: 1420,
+  //   title: "Chó Bichon",
+  //   content: "",
+  //   imgUrl:
+  //     "https://dogily.vn/wp-content/uploads/2022/06/cho-bichon-trang-cai-7-400x400.png",
+  // },
+  // {
+  //   href: "",
+  //   price: 820,
+  //   title: "Chó Shipa Inu",
+  //   content: "",
+  //   imgUrl:
+  //     "https://dogily.vn/wp-content/uploads/2021/09/dan-3-cho-shiba-inu-mai-vang-trang-2-thang-tuoi-1-400x400.jpg",
+  // },
+  // {
+  //   href: "",
+  //   price: 2600,
+  //   title: "Chó Golden",
+  //   content: "",
+  //   imgUrl:
+  //     "https://dogily.vn/wp-content/uploads/2022/05/cho-golden-retriever-400x400.jpg",
+  // },
   {
-    href: "",
-    price: 1200,
-    title: "Chó Corgi",
-    content: "",
-    imgUrl:
-      "https://dogily.vn/wp-content/uploads/2022/04/corgi-vang-trang-duc-4-400x400.png",
+    isSkeleton: true
   },
   {
-    href: "",
-    price: 1600,
-    title: "Chó Phốc Sóc",
-    content: "",
-    imgUrl:
-      "https://dogily.vn/wp-content/uploads/2022/08/cho-phoc-soc-vang-duc-day-du-giay-vka-2-400x400.png",
+    isSkeleton: true
   },
   {
-    href: "",
-    price: 1300,
-    title: "Chó Poodle",
-    content: "",
-    imgUrl:
-      "https://dogily.vn/wp-content/uploads/2022/07/cho-poodle-teacup-mau-trang-cai-9-400x400.png",
+    isSkeleton: true
   },
   {
-    href: "",
-    price: 1420,
-    title: "Chó Bichon",
-    content: "",
-    imgUrl:
-      "https://dogily.vn/wp-content/uploads/2022/06/cho-bichon-trang-cai-7-400x400.png",
-  },
-  {
-    href: "",
-    price: 820,
-    title: "Chó Shipa Inu",
-    content: "",
-    imgUrl:
-      "https://dogily.vn/wp-content/uploads/2021/09/dan-3-cho-shiba-inu-mai-vang-trang-2-thang-tuoi-1-400x400.jpg",
-  },
-  {
-    href: "",
-    price: 2600,
-    title: "Chó Golden",
-    content: "",
-    imgUrl:
-      "https://dogily.vn/wp-content/uploads/2022/05/cho-golden-retriever-400x400.jpg",
+    isSkeleton: true
   },
 ];
 const catList: CardListType = [

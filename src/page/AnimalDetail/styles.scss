@@ -1,0 +1,49 @@
+img.ant-image-preview-img { display: inline-block; } 
+.animal-row {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.title-detail {
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+.title-detail span {
+    font-weight: 700;
+    color: #0000ff;
+}
+
+.property-index {
+    background: #f8fbe9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.property-index:nth-child(2) {
+    margin-left: 8px;
+}
+
+.property-index span {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.btn-main {
+    width: 182px;
+    height: 54px !important;
+    border-radius: 8px !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+}
+
+.btn-messenger {
+    background: #3186F6 !important;
+    color: #fff !important;
+}
+
+.btn-add-cart {
+    background: #FFE727!important;
+    color: #000 !important;
+}
